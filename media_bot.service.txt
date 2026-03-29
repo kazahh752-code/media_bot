@@ -1,0 +1,15 @@
+[Unit]
+Description=Media Downloader Telegram Bot (Instagram + YouTube)
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/media_bot
+EnvironmentFile=/root/media_bot/.env
+ExecStart=/root/media_bot/venv/bin/python3 /root/media_bot/bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
